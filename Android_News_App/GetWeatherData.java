@@ -25,7 +25,7 @@ public class GetWeatherData {
 
     private static final String URL = "https://api.openweathermap.org/data/2.5/weather";
     private static final String WEATHER_TAG = "CURRENT_WEATHER";
-    private static final String API_KEY = "7997bbf50ef2a736b72aceed269f0589";
+    private static final String API_KEY = "";
 
     private RequestQueue queue;
 
