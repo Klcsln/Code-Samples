@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Homework 4</title>
+</head>
+
+<body>
+    <h2 style="text-align: center; margin-top: 100px;"><strong>Enter URL for list of tallest buildings JSON File</strong></h2>
+  <div style="text-align: center;">
+    <input id = "jsonUrl" type="text"  value="buildinglist.json" style="margin: 10px;"> </br>
+    <button id="getJson">Submit Query</button>
+   </div>
+
+<script> 
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getJson').onclick = function(){
+      var req = new XMLHttpRequest();
+      var jsonUrl = document.getElementById('jsonUrl').value;
+      if(jsonUrl == ""){
+        window.alert("Please enter a Json URL!");
+      }
+      req.open("GET",jsonUrl,false);
+      try{
+        req.send();
+      } catch {
+        window.alert("Json file not found");
+      }
+      var jsonObj = JSON.parse(req.responseText);
+        processJson(jsonObj);
+    };
+  });
+
+  var processJson = function(json) {
+    json.onload = generateHTML(json); 
+    hWin = window.open("", "Assignment4", "height=1920,width=1080");
+    hWin.document.write(html_text);
+    hWin.document.close();
+  }; 
+
+  var generateHTML = function(jsonObj) {
+    root=jsonObj.DocumentElement;
+    html_text="<html><head><title>Tallest Buildings</title></head><body>";
+    html_text+="<table border='2'>";
+    if(!jsonObj.Mainline.Table.hasOwnProperty("Row") || jsonObj.Mainline.Table.Row.length == 0){ // Check if there are building data in JSON
+      window.alert("No buildings found!");
+    }
+    buildings=jsonObj.Mainline.Table.Row; // An array of buildings
+    buildingNodeList=buildings[0];
+    html_text+="<tbody>";
+    html_text+="<tr>";
+    x=0; y=0;
+    // Output the headers
+    var header_keys = jsonObj.Mainline.Table.Header.Data;
+    for(i=0;i<header_keys.length;i++) {
+    header=header_keys[i];
+    html_text+="<th>"+header+"</th>";
+    }
+    html_text+="</tr>";
+    // Output out the values
+    for(i=0;i<buildings.length;i++){// Do for all buildings (one per row)
+    buildingNodeList=buildings[i]; // Get properties of a building (an object)
+    html_text+="<tr>"; // Start a new row of the output table
+    var building_keys = Object.keys(buildingNodeList);
+    for(j=0;j<building_keys.length;j++){ // Loop through each property of a building
+    prop = building_keys[j];
+    if(building_keys[j]=="Logo") {// Handle images separately
+    html_text+="<td><img src='"+ buildingNodeList[prop] +"' style = 'width:  200px; height: 200px; background-size: cover;''></td>";
+    } else if(building_keys[j] == "HomePage") { // Handle links separately
+      html_text+="<td><a href='"+ buildingNodeList[prop] +"'>" + buildingNodeList[prop] + "</td>";
+    } else if(building_keys[j] == "Hubs" ){ // Handle hubs data separately
+        if(buildingNodeList[prop]["Hub"].length == 0 || buildingNodeList[prop]["Hub"][0] == ""){ // Check if Hubs is empty or contains an empty string
+          html_text+="<td></td>";
+        } else{
+          html_text+="<td><ul><li><b>" + buildingNodeList[prop]["Hub"][0] + "</b></li>"; // First element of the hubs property should be bold
+          for(k=1;k<buildingNodeList[prop]["Hub"].length;k++){ // Loop through rest of the elements and output as a list
+          html_text+= "<li>" + buildingNodeList[prop]["Hub"][k] + "</li>";
+          }
+          html_text+="</td>";
+      }
+      
+    }
+      else { // No special handling for the rest of the data
+    html_text+="<td>"+ buildingNodeList[prop] +"</td>";
+    }
+    }
+    html_text+="</tr>";
+    }
+    html_text+="</tbody>";
+    html_text+="</table>";
+    html_text+= "</bo" + "<dy> </html>"; // To escape freevar injection on the body tag
+    } 
+</script>
+</body>
+</html>

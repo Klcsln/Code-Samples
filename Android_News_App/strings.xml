@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">HW9</string>
+    <string name="title_home">Home</string>
+    <string name="title_headlines">Headlines</string>
+    <string name="title_trending">Trending</string>
+    <string name="title_bookmarks">Bookmarks</string>
+    <string name="weather_city">City Name</string>
+    <string name="weather_state">State Name</string>
+    <string name="weather_temp">Temperature</string>
+    <string name="weather_desc">Weather Description</string>
+    <string name="news_desc">News Description</string>
+    <string name="card_background_desc">Card Background Image</string>
+    <string name="news_title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="news_date">1m ago</string>
+    <string name="news_section">Section</string>
+    <string name="detail_title">Murder hornets in Washington state threaten bees and whip up media swarm</string>
+    <string name="detail_date">06 Apr 2020</string>
+    <string name="detail_section">Section</string>
+    <string name="detail_text">Researchers and citizens in Washington state are on a careful hunt for invasive “murder hornets”, after the insect made its first appearance in the US.
+
+The Asian giant hornet is the world’s largest and can kill humans. But it is most dangerous for the European honeybee, which is defenseless in the face of the hornet’s spiky mandibles, long stinger and potent venom.
+
+
+Florida man stalks beach as Grim Reaper to protest reopening amid pandemic
+Read more
+Washington state verified four reports of Asian giant hornets in two north-western cities in December. The species becomes more active in April, prompting local officials to invite the public to help beekeepers by creating their own hornet traps.
+
+“It’s a shockingly large hornet,” Todd Murray, Washington State University Extension entomologist and invasive species specialist, said in a statement. “It’s a health hazard, and more importantly, a significant predator of honeybees.”
+
+Murray said it was important for people to learn to recognize the insect now, while the population is small and still new to the region.
+
+“We need to teach people how to recognize and identify this hornet while populations are small,” he said, “so that we can eradicate it while we still have a chance.”
+
+The hornets are about the size of an adult thumb, with a yellow and orange head. They are most destructive in the late summer and early fall. One telltale sign they have visited a hive is the remains of decapitated bees.
+
+Some researchers refer to the insect as a “murder hornet”, according to a New York Times story published on Saturday.
+
+In Japan, up to 50 people a year die after being stung, though the hornet is usually only aggressive to humans if it is disturbed.
+
+The Times story prompted a slew of comments on social media, noting the appearance of the hornets in the US in 2020, alongside famine, pestilence and war.
+
+“Whomever had murder by hornet on their apocalypse bingo card, please step forward to collect your winnings,” wrote Kaz Weida, a freelance journalist.
+
+The comedian Patton Oswalt shared the story and wrote “murder hornets. Sure thing, 2020. Give us everything. Hypno-frogs. Fecal blizzards. Toilet tsunamis. A CATS sequel. We can take it.”
+
+The author Rabih Alameddine posted: “I really think that was missing from my life this year was murder hornets.”</string>
+    <string name="detail_link">https://www.theguardian.com/</string>
+    <string name="detail_desc">Image Description</string>
+</resources>

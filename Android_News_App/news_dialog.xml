@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/dialog_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/dialog_image"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/news_desc"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_image" />
+
+    <ImageView
+        android:id="@+id/dialog_twitter"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/dialog_bookmark"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_title"
+        android:src="@drawable/bluetwitter"
+        android:contentDescription="Twitter" />
+
+    <ImageView
+        android:id="@+id/dialog_bookmark"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/dialog_image"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_title"
+        android:src="@drawable/ic_bookmark_border_black_24dp"
+        android:tint="#FF0000"
+        android:contentDescription="Bookmark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
