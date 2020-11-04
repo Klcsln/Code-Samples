@@ -3,4 +3,4 @@ This is a repository of code examples from my personal projects, coursework and 
 
 ## Links to Check
 ### React/NodeJS Live News Website
-https://hw8-react-571.s3.us-east-1.amazonaws.com/
+https://hw8-react-571.s3.us-east-1.amazonaws.com/index.html
